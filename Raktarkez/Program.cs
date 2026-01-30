@@ -48,6 +48,13 @@
                 if(((Elelmiszer)t).LejartE())
                     keszlet.Add(t);
         }
+        public void Listazz()
+        {
+            foreach (Termek t in keszlet)
+            {
+                t.Info();
+            }
+        }
     }
 
   
@@ -60,7 +67,10 @@
             Elelmiszer e = new Elelmiszer("tej", 300, 8);
             e.Info();
             e.LejartE();
-
+            Raktar raktar = new Raktar();
+            raktar.Hozzaad(new Elelmiszer("kifli", 200, 60));
+            raktar.Hozzaad(a);
+            raktar.Listazz();
         }
     }
 }
