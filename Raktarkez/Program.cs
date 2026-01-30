@@ -23,10 +23,30 @@
         {
             this.lejaratiSzam = lejaratiSzam;
         }
-        public void LejartE()
+        public bool LejartE()
         {
             if (lejaratiSzam < 10)
+            {
                 Console.WriteLine("Lejárt a termék");
+                return false;
+            }
+            return true;
+        }
+    }
+    public class Raktar
+    {
+        private List<Termek> keszlet;
+
+        public Raktar()
+        {
+            keszlet = new List<Termek>();
+        }
+
+        public void Hozzaad(Termek t)
+        {
+            if(t is Elelmiszer)
+                if(((Elelmiszer)t).LejartE())
+                    keszlet.Add(t);
         }
     }
 
@@ -40,6 +60,7 @@
             Elelmiszer e = new Elelmiszer("tej", 300, 8);
             e.Info();
             e.LejartE();
+
         }
     }
 }
