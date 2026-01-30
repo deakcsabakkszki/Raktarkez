@@ -16,6 +16,14 @@
         }
     }
 
+    public class Elelmiszer : Termek
+    {
+        private int lejaratiSzam;
+        public Elelmiszer(string nev, int ar, int lejaratiSzam) : base(nev, ar)
+        {
+            this.lejaratiSzam = lejaratiSzam;
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
