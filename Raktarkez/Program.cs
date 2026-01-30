@@ -55,6 +55,17 @@
                 t.Info();
             }
         }
+
+        public void ElelmiszerekListazasa()
+        {
+            foreach (Termek t in keszlet)
+            {
+                if (t is Elelmiszer)
+                {
+                    t.Info();
+                }
+            }
+        }
     }
 
   
@@ -69,8 +80,11 @@
             e.LejartE();
             Raktar raktar = new Raktar();
             raktar.Hozzaad(new Elelmiszer("kifli", 200, 60));
+            raktar.Hozzaad(new Elelmiszer("zsömle", 100, 67));
             raktar.Hozzaad(a);
             raktar.Listazz();
+            Console.WriteLine("------");
+            raktar.ElelmiszerekListazasa();
         }
     }
 }
